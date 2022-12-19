@@ -50,7 +50,7 @@ if st.button("Predict"):
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
     }
-    response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers, data=input_seq)
+    response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers, data=transformed_seq)
     pdb_string = response.content.decode('utf-8')
     with open('predicted.pdb', 'w') as f:
         f.write(pdb_string)
