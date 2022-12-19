@@ -45,6 +45,7 @@ default_seq = "MASKSNYNLLFTALLVFIFAAVAAVGNEDCTPWTSTLITPLPSCRNYVEEQACRIEMPGPPYLAK
 
 input_seq = st.text_area("Enter Your Protein Sequence", default_seq, height=200)
 st.caption("""Example Sequence: CM 17 protein (Wheat)""")
+st.caption("""Sequence needs to be less than 400 characters""")
 transformed_seq = input_seq.translate({ord(c): None for c in string.whitespace})
 if st.button("Predict"):
     headers = {
