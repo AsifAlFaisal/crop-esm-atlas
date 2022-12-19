@@ -20,8 +20,28 @@ st.header("Crop Protein Prediction using ESMFold")
 
 """ESMFold (Developed by Facebook Meta AI) uses the representations from a large language model (ESM2) to generate an accurate structure prediction from the sequence of a protein."""
 st.caption("[Check the publication here](https://www.nature.com/articles/d41586-022-03539-1)")
+st.caption("e.g. You can find some protein sequence [here](https://www.uniprot.org/)")
+
+hide_footer = """
+<style>
+footer {
+    visibility: hidden;	
+    }
+footer:after {
+    content:'Platform developed by, Asif Al Faisal'; 
+    visibility: visible;
+    color:black;
+    display: block;
+    position: relative;
+    #background-color: red;
+    padding: 5px;
+    top: 2px;
+}
+</style>
+"""
+st.markdown(hide_footer, unsafe_allow_html=True) 
+
 default_seq = "MASKSNYNLLFTALLVFIFAAVAAVGNEDCTPWTSTLITPLPSCRNYVEEQACRIEMPGPPYLAKQECCEQLANIPQQCRCQALRYFMGPKSRPDQSGLMELPGCPREVQMNFVPILVTPGYCNLTTVHNTPYCLGMEESQWS"
-st.subheader("")
 
 input_seq = st.text_area("Enter Your Protein Sequence", default_seq, height=200)
 st.caption("""Example Sequence: CM 17 protein (Wheat)""")
